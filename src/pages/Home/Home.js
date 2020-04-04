@@ -7,6 +7,7 @@ import {
   Icon,
   Segment,
   Button,
+  Responsive,
 } from "semantic-ui-react";
 import styled from "styled-components";
 const Home = () => {
@@ -16,10 +17,11 @@ const Home = () => {
 
   return (
     <Container>
-      <Segment placeholder>
+      <Segment compact placeholder>
         <Grid columns={2} stackable textAlign="center">
-          <Divider vertical>O</Divider>
-
+          <Responsive minWidth={768}>
+            <Divider vertical>O</Divider>
+          </Responsive>
           <Grid.Row verticalAlign="middle">
             <Grid.Column>
               <Header icon>

@@ -1,5 +1,11 @@
 import React from "react";
-import { Menu, Button, Image, Header as Head } from "semantic-ui-react";
+import {
+  Menu,
+  Button,
+  Image,
+  Header as Head,
+  Responsive,
+} from "semantic-ui-react";
 import useSideMenu from "../../../context/sideMenu/useSideMenu";
 import useAuth from "../../../context/auth/useAuth";
 import logo from "../../../images/logo";
@@ -35,11 +41,11 @@ const Header = () => {
         <Menu.Item as="div">
           <HeaderLink to="/">
             <Image src={logo} size="mini" circular />
-            <HeadStyle as="h1">&nbsp;Ayuda Bienvenida</HeadStyle>
+            <HeadStyle as="h2">&nbsp;Ayuda Bienvenida</HeadStyle>
           </HeaderLink>
         </Menu.Item>
         <Menu.Item position="right">
-          {auth.user.email}
+          <Responsive minWidth={768}>{auth.user.email}</Responsive>
           <Button
             size="large"
             color="red"

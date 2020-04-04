@@ -12,6 +12,7 @@ const SideMenu = () => {
     setOpen(false);
   };
   const handleLogout = () => {
+    setOpen(false);
     auth.signout(() => history.push("/"));
   };
 
@@ -35,6 +36,7 @@ const SideMenu = () => {
       visible={isOpen}
       vertical
       inverted
+      width={"thin"}
     >
       <Sidebar.Pushable style={{ height: "auto" }}>
         <CloseMenuStyle onClick={handleClose}>X</CloseMenuStyle>
