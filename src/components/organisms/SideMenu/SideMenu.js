@@ -2,7 +2,7 @@ import React from "react";
 import { Sidebar, Menu } from "semantic-ui-react";
 import useSideMenu from "../../../context/sideMenu/useSideMenu";
 import useAuth from "../../../context/auth/useAuth";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import styled from "styled-components";
 const SideMenu = () => {
   const [isOpen, setOpen] = useSideMenu();
@@ -40,6 +40,12 @@ const SideMenu = () => {
         <CloseMenuStyle onClick={handleClose}>X</CloseMenuStyle>
       </Sidebar.Pushable>
       <Sidebar.Pusher>
+        <Link to="/donar" onClick={handleClose}>
+          <Menu.Item as="a">Donar</Menu.Item>
+        </Link>
+        <Link to="/solicitar" onClick={handleClose}>
+          <Menu.Item as="a">Solicitar</Menu.Item>
+        </Link>
         <Menu.Item as="a" onClick={handleLogout}>
           LogOut
         </Menu.Item>

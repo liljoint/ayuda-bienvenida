@@ -1,5 +1,5 @@
 const useAuth = {
-  isLoggedIn: false,
+  isLoggedIn: true,
   user: {
     email: "bechegoyen@gmail.com",
     name: "Bryan Echegoyen",

@@ -6,7 +6,14 @@ const Footer = () => {
     bottom: 0;
     justify-content: center;
   `;
-  return <Container>Footer; Brigada cruz azúl 2020</Container>;
+  return (
+    <Container>
+      From (Someone) With&nbsp;
+      <span role="img" aria-label="love">
+        &#128151;
+      </span>
+    </Container>
+  );
 };
 
 export default Footer;
