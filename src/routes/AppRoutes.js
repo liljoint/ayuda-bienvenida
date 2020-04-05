@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import PrivateRoutes from "./PrivateRoutes";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
-import SideMenu from "../components/organisms/SideMenu";
-import Header from "../components/molecules/Header";
+import MainContainer from "../pages/MainContainer";
+import OfferProduct from "../components/organisms/Forms/OfferProduct/OfferProduct";
+import RequestProduct from "../components/organisms/Forms/RequestProduct/RequestProduct";
 const AppRoutes = () => {
   return (
     <Router>
@@ -13,19 +14,24 @@ const AppRoutes = () => {
           <Login />
         </Route>
         <PrivateRoutes path="/donar">
-          <Header />
-          <SideMenu />
-          <div>Donar</div>
+          <MainContainer>
+            <OfferProduct />
+          </MainContainer>
         </PrivateRoutes>
         <PrivateRoutes path="/solicitar">
-          <Header />
-          <SideMenu />
-          <div>Solicitar</div>
+          <MainContainer>
+            <RequestProduct />
+          </MainContainer>
+        </PrivateRoutes>
+        <PrivateRoutes path="/profile">
+          <MainContainer>
+            <div>Profile</div>
+          </MainContainer>
         </PrivateRoutes>
         <PrivateRoutes path="/">
-          <Header />
-          <SideMenu />
-          <Home />
+          <MainContainer>
+            <Home />
+          </MainContainer>
         </PrivateRoutes>
       </Switch>
     </Router>

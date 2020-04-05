@@ -1,5 +1,5 @@
 import React from "react";
-import { Sidebar, Menu } from "semantic-ui-react";
+import { Sidebar, Menu, Icon } from "semantic-ui-react";
 import useSideMenu from "../../../context/sideMenu/useSideMenu";
 import useAuth from "../../../context/auth/useAuth";
 import { useHistory, Link } from "react-router-dom";
@@ -15,7 +15,6 @@ const SideMenu = () => {
     setOpen(false);
     auth.signout(() => history.push("/"));
   };
-
   const CloseMenuStyle = styled.div`
     flex-direction: row;
     font-weight: bold;
@@ -34,6 +33,7 @@ const SideMenu = () => {
       as={Menu}
       direction="right"
       visible={isOpen}
+      animation="overlay"
       vertical
       inverted
       width={"thin"}
@@ -42,14 +42,21 @@ const SideMenu = () => {
         <CloseMenuStyle onClick={handleClose}>X</CloseMenuStyle>
       </Sidebar.Pushable>
       <Sidebar.Pusher>
-        <Link to="/donar" onClick={handleClose}>
-          <Menu.Item as="a">Donar</Menu.Item>
-        </Link>
-        <Link to="/solicitar" onClick={handleClose}>
-          <Menu.Item as="a">Solicitar</Menu.Item>
-        </Link>
+        <Menu.Item as={Link} to="/profile">
+          Perfíl
+          <Icon name="user" />
+        </Menu.Item>
+        <Menu.Item as={Link} to="/donar">
+          Donar
+          <Icon name="gift" />
+        </Menu.Item>
+        <Menu.Item as={Link} to="/solicitar">
+          Solicitar
+          <Icon name="globe" />
+        </Menu.Item>
         <Menu.Item as="a" onClick={handleLogout}>
-          LogOut
+          Salir
+          <Icon name="sign-out" />
         </Menu.Item>
       </Sidebar.Pusher>
     </Sidebar>

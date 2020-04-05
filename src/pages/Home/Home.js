@@ -8,15 +8,28 @@ import {
   Segment,
   Button,
   Responsive,
+  Message,
 } from "semantic-ui-react";
 import styled from "styled-components";
 const Home = () => {
-  const Container = styled.div`
-    padding: 2rem;
-  `;
+  const Container = styled.div``;
 
   return (
     <Container>
+      <Message positive>
+        <Message.Header>Información Completa</Message.Header>
+        <p>
+          Has completado la información importante, por lo tanto ya puedes Donar
+          productos o Solicitar ayuda.
+        </p>
+      </Message>
+      <Message negative>
+        <Message.Header>Falta Información</Message.Header>
+        <p>
+          Debe ingresar la región, comuna y dirección para conectar la
+          información. <Link to="/form">Actualizar información</Link>
+        </p>
+      </Message>
       <Segment compact placeholder>
         <Grid columns={2} stackable textAlign="center">
           <Responsive minWidth={768}>
