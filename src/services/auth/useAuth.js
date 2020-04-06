@@ -2,11 +2,11 @@ const useAuth = {
   isLoggedIn: true,
   user: {
     uid: 1,
-    email: "bechegoyen@gmail.com",
-    name: "Bryan Echegoyen",
+    email: "test@gmail.com",
+    name: "Test User",
     comuna: 1,
     region: 13,
-    direccion: "Amunategui 573 depto 1801",
+    direccion: "Standard adress #123 depto 1801",
   },
   authenticate: (cb) => {
     useAuth.isLoggedIn = true;

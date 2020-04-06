@@ -23,7 +23,7 @@ const Home = () => {
           productos o Solicitar ayuda.
         </p>
       </Message>
-      <Message negative>
+      <Message negative hidden={true}>
         <Message.Header>Falta Información</Message.Header>
         <p>
           Debe ingresar la región, comuna y dirección para conectar la
